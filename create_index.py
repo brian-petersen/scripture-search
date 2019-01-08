@@ -29,7 +29,8 @@ if __name__ == '__main__':
 
     setup_connection()
 
-    Verse._index.delete()
+    if Verse._index.exists():
+        Verse._index.delete()
     Verse.init()
 
     for verse in verses:
